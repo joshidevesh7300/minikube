@@ -1,0 +1,23 @@
+Ig minikube failed to statrt using  minikube start or  minikube start --driver=docker then do following changes:
+
+✅ Fix It (Do This Exactly)
+1️⃣ Add your user to the docker group (run again just in case)
+
+sudo usermod -aG docker $USER
+
+2️⃣ Refresh your terminal session (this is the step you missed)
+
+Either logout → login OR just run:
+
+newgrp docker
+
+3️⃣ Test Docker without sudo
+docker ps
+
+
+If this works without permission error, you're good.
+
+4️⃣ Now start Minikube again
+minikube start --driver=docker
+
+from echo"Devesh Joshi"
